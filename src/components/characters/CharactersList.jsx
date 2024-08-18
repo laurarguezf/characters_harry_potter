@@ -1,11 +1,18 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import CharacterItem from "./CharacterItem";
 
 
 function CharactersList({characters}) {
+
+  if (characters.length === 0) {
+    return ( 
+      <p>No characters available</p>
+    );
+  }
+
   return (
     <ul>
-      {characters.map((character) => (
+      {characters.map(character => (
         <li key={character.id}>
             <CharacterItem character={character}/>
         </li>
@@ -13,5 +20,9 @@ function CharactersList({characters}) {
     </ul>
   );
 }
+
+CharactersList.propTypes = {
+  characters: PropTypes.array.isRequired
+};
 
 export default CharactersList;

@@ -8,7 +8,7 @@ import CharactersList from "./characters/CharactersList";
 function App() {
   // VARIABLES DE ESTADO
 
-  const [characters, setCharacters] = useState(charactersJson);
+  const [characters, setCharacters] = useState([charactersJson]);
 
   // USEEFFECT
 

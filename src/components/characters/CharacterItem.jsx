@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
+
 function CharacterItem({ character }) {
   return (
     <article>
@@ -10,5 +11,9 @@ function CharacterItem({ character }) {
     </article>
   );
 }
+
+CharacterItem.propTypes = {
+  character: PropTypes.object.isRequired
+};
 
 export default CharacterItem;
