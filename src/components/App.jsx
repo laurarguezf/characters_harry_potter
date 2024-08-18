@@ -1,16 +1,21 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import "../styles/App.scss";
-
-import charactersJson from "../data/characters.json";
 import CharactersList from "./characters/CharactersList";
+import { getCharacters } from "../services/charactersApi";
 
 function App() {
   // VARIABLES DE ESTADO
 
-  const [characters, setCharacters] = useState([charactersJson]);
+  const [characters, setCharacters] = useState([]);
 
   // USEEFFECT
+
+  useEffect(() => {
+    getCharacters()
+      .then((responseData) => {
+        setCharacters(responseData);
+      });
+  }, []);
 
   // EVENTOS
 
@@ -38,9 +43,8 @@ function App() {
 
         <section>
           <h2>Lista de personajes</h2>
-          
-          <CharactersList characters={characters}/>
 
+          <CharactersList characters={characters} />
         </section>
       </main>
 
