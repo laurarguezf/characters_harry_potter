@@ -1,28 +1,30 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import CharactersList from "./characters/CharactersList";
+import HouseFilter from "./filters/HouseFilter";
+import SearchFilter from "./filters/SearchFilter";
 
-import ContactList from "./contacts/ContactList";
-import GenderFilter from './Filters/GenderFilter';
-
-function Landing({contacts, genderFilter, handleChangeGender}) {
+function Landing({filteredCharacters, houseFilter, handleChangeHouse, searchFilter, handleChangeSearch}) {
   return (
     <>
       <form>
-        <GenderFilter genderFilter={genderFilter} handleChangeGender={handleChangeGender}/>
+        <SearchFilter searchFilter={searchFilter} handleChangeSearch={handleChangeSearch} />
+        <HouseFilter houseFilter={houseFilter} handleChangeHouse={handleChangeHouse} /> 
       </form>
 
-      <section className="contacts">
-        <h2 className="contacts__title title--medium">Lista de contactos</h2>
-
-        <ContactList contacts={contacts} />
+      <section>
+        <h2>Lista de personajes</h2>
+        <CharactersList characters={filteredCharacters} />
       </section>
     </>
   );
 }
 
 Landing.propTypes = {
-  contacts: PropTypes.array.isRequired,
-  genderFilter: PropTypes.string.isRequired,
-  handleChangeGender: PropTypes.func.isRequired
-}
+  filteredCharacters: PropTypes.array.isRequired,
+  houseFilter: PropTypes.string.isRequired,
+  handleChangeHouse: PropTypes.func.isRequired,
+  searchFilter: PropTypes.string.isRequired,
+  handleChangeSearch: PropTypes.func.isRequired
+};
 
 export default Landing;
