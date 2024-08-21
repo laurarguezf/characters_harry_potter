@@ -32,18 +32,6 @@ function App() {
   }
 
   // FUNCIONES DE RENDERIZADO
-
-  {/*const filteredCharacters = characters
-    .filter((filteredCharacter) => {
-      if (houseFilter === "all" ) {
-        return true;
-      } else {
-        return filteredCharacter.house === houseFilter;
-      }
-    })
-    .filter((searchCharacter) => {
-        return searchCharacter.name.toLowerCase().includes(searchFilter.toLowerCase());
-    });*/}
   
   const filteredCharacters = characters
     .filter((filteredCharacter) => houseFilter === "all" || filteredCharacter.house === houseFilter)
@@ -55,9 +43,13 @@ function App() {
   }
 
   return (
-    <div className="page">
-      <header>
-        <h1>Buscador de personajes</h1>
+    <div>
+      <video className="video_background" autoPlay muted loop>
+        <source src="src/videos/clouds.mp4" type="video/mp4"/>
+      </video>
+      <header className="header">
+        <img src="src/images/logo.png" className="header_logo" alt="Harry Potter Logo" />
+        <h1 className="header_title">Character finder</h1>
       </header>
 
       <main className="main">
@@ -67,8 +59,8 @@ function App() {
         </Routes>
       </main>
 
-      <footer>
-        <small>&copy;2024 Adalabers : promo Betty</small>
+      <footer className="footer">
+        <small>&copy;2024 Adalabers <span className="lightning">ϟ</span> promo Betty</small>
       </footer>
     </div>
   );

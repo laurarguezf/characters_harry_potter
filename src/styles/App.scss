@@ -2,31 +2,249 @@
 @import './core/variables';
 
 
-.main {
-  display: grid;
-  row-gap: 3rem;
+// Contenedor Principal
 
-  @media (min-width: 600px) {
-    grid-template-columns: 2fr 3fr;
-    column-gap: 3rem;
-  }
+.video_background {
+  min-height: 100%;
+  min-width: 100%; 
+  position: fixed;
+  left: 0; 
+  bottom: 0;
+  z-index: -1;
 }
 
-.form {
-  &__section {
-    width: 300px;
-    margin-inline: auto;
-    margin-bottom: 1rem;
-    display: grid;
-    grid-template-columns: 5em 1fr;
+// Encabezado
 
-    @media (min-width: 600px) {
-      width: 100%;
-      grid-template-columns: 9em 1fr;
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header_logo {
+    max-width: 100%;
+    max-height: 150px;
+  }
+
+  .header_title {
+    padding-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: $color_text;
+    font-weight: normal;
+  }
+
+  @media (min-width: 768px) {
+    .header_logo {
+      max-height: 250px;
+    }
+    
+    .header_title {
+      font-size: 2.5rem;
     }
   }
 }
 
-.labelCity, .labelGender{
-    display: block;
+
+
+// Área Principal
+
+
+.main {
+
+  .landing_form {
+    display: grid;
+    justify-content: center;
+    align-items: start;
+    margin-block: 1.5rem;
+
+    .form_label {
+      color: $color_text;
+      font-size: 1.1rem;
+    }
+    
+    .form_input {
+      margin-top: 0.5rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .form_input_text {
+      font-size: 1rem;
+      color: #3e3e3e;
+    }
+
+    .form_input_search {
+      min-width: 220px;
+    }
+
+    .form_button_reset {
+      cursor: pointer;
+      padding-inline: 0.25rem;
+      background-color: rgb(255, 240, 212);
+      border: 1px solid rgb(0, 0, 0);
+      text-decoration: none;
+      color: black;
+      font-weight: bolder;
+      font-size: 0.9rem;
+      border-radius: 2px;
+    }
+
+    .form_input_house {
+      width: 135px;
+    }
+
+    @media (min-width: 768px) {
+      
+    }
+  }
+
+  .landing_characters_section {
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .characters_title {
+        padding-bottom: 1.5rem;
+        font-size: 1.5rem;
+        color: $color_text;
+        font-weight: normal;
+        text-align: center;
+      }
+    
+    // Tarjetas de Personajes
+
+    .character_list {
+      display: grid;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .character_list_item {
+      list-style: none;
+      max-width: 220px;
+    }
+
+    .character_container {
+      background-color: $color_card_background;
+      border-radius: $border-radius;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .character_img {
+      width: 200px;
+      height: 250px;
+      object-fit: cover;
+      object-position: top;
+
+      margin-bottom: 1rem;
+    }
+
+    .character_name {
+      color: #3e3e3e;
+      font-size: 1.3rem;
+      padding-bottom: 0.5rem;
+      font-weight: bolder;
+      
+    }
+
+    .character_specie {
+      font-size: 1rem;
+      color: #3e3e3e;
+
+    }
+
+  }
+
+  .detailed_section {
+
+    text-align: center;
+
+    .detailed_title {
+      padding-block: 0.5rem 1rem;
+      padding-inline: 1rem;
+      font-size: 1.5rem;
+      color: $color_text;
+      font-weight: normal;
+    }
+
+    .detailed_character {
+      margin-inline: 2rem;
+      margin-bottom: 1rem;
+      background-color: $color_text;
+      padding: 1rem;
+      border-radius: $border-radius; 
+
+    }
+
+    .detailed_img {
+      margin-bottom: 1.5rem;
+      max-width: 160px;
+      height: auto;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .detailed_info {
+      text-align: left;
+    }
+
+    .bolder {
+      font-weight: bold;
+      padding-block: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.283);
+    }
+
+    
+  }
+
+  .return_link {
+    background-color: rgb(255, 227, 175);
+    padding: 0.3rem;
+    border: 1px solid rgb(0, 0, 0);
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    border-radius: 5px;
+   
+    
+  }
+
+  .warning_text {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-inline: 1rem;
+    animation: blink 1.25s infinite;
+
+    @keyframes blink {
+      0% { color: red; }
+      50% { color: transparent; }
+      100% { color: red; }
+    }
+  }
+
+  .warning_character {
+    text-align: center;
+  }
+
 }
+
+// Pie de pagina
+
+.footer {
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  color: $color_text;
+  text-align: center;
+
+  .lightning {
+    color: orange;
+  }
+}
+

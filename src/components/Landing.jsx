@@ -2,17 +2,18 @@ import PropTypes from "prop-types";
 import CharactersList from "./characters/CharactersList";
 import HouseFilter from "./filters/HouseFilter";
 import SearchFilter from "./filters/SearchFilter";
+import { handleSubmit } from "../services/handleSubmit";
 
 function Landing({filteredCharacters, houseFilter, handleChangeHouse, searchFilter, handleChangeSearch}) {
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit} className="landing_form">
         <SearchFilter searchFilter={searchFilter} handleChangeSearch={handleChangeSearch} />
         <HouseFilter houseFilter={houseFilter} handleChangeHouse={handleChangeHouse} /> 
       </form>
 
-      <section>
-        <h2>Lista de personajes</h2>
+      <section className="landing_characters_section">
+        <h2 className="characters_title">Cast of characters</h2>
         <CharactersList characters={filteredCharacters} />
       </section>
     </>

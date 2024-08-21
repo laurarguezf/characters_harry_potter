@@ -8,9 +8,9 @@ function HouseFilter({houseFilter, handleChangeHouse}) {
   
   return (
     <div>
-      <label>House</label>
-      <div>
-        <select onChange={handleHouseFilter} value={houseFilter} name="house" id="house">
+      <label className="form_label">Search by house:</label>
+      <div className="form_input">
+        <select className="form_input_text form_input_house" onChange={handleHouseFilter} value={houseFilter} name="house" id="house">
           <option value="all">All houses</option>
           <option value="Gryffindor">Gryffindor</option>
           <option value="Slytherin">Slytherin</option>

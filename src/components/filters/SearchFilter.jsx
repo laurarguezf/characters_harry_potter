@@ -5,10 +5,18 @@ function SearchFilter({searchFilter, handleChangeSearch}) {
   const handleSearchFilter = (ev) => {
     handleChangeSearch(ev.currentTarget.value);
   };
+
+  const handleReset = () => {
+    handleChangeSearch('');
+  }
   
   return (
     <div>
-      <input type="text" onChange={handleSearchFilter} value={searchFilter} placeholder="Search your character" name="search_filter" id="search_filter" />
+      <label className="form_label">Search by name:</label>
+      <div className="form_input">
+        <input className="form_input_text form_input_search" type="text" onChange={handleSearchFilter} value={searchFilter} placeholder="Search your character" name="search_filter" id="search_filter" />
+        <button className="form_button_reset" type="button" onClick={handleReset}>Reset</button>
+      </div>
     </div>
   );
 }

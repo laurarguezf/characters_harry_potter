@@ -7,34 +7,33 @@ function CharacterDetails({showDetailedCharacter}) {
 
   const params = useParams();
 
-  console.log(params);
-
   const detailedCharacterInfo = showDetailedCharacter( params.id );
 
   if (detailedCharacterInfo === undefined) {
     return ( 
-      <div>
-        <p>No character found</p>
+      <div className="warning_character">
+        <p className="warning_text">No character found</p>
+        <Link to="/" className="return_link">Return to main page</Link>
       </div>
       )
   }
 
   return (
-      <div>
-          <h2>{`Detailed information of ${detailedCharacterInfo.name}`}</h2>
-          <article>
-              <img src={detailedCharacterInfo.image || defaultImage} alt={`Photo of ${detailedCharacterInfo.name}`} />
-              <div>
-                  <p>Name: {detailedCharacterInfo.name}</p>
-                  <p>Status: {detailedCharacterInfo.alive ? 'Alive' : 'Dead'}</p>
-                  <p>House: {detailedCharacterInfo.house}</p>
-                  <p>Gender: {capitalizeLetter(detailedCharacterInfo.gender)}</p>
-                  <p>Specie: {capitalizeLetter(detailedCharacterInfo.species)}</p> 
-                  <p>Alternative names: {detailedCharacterInfo.alternate_names.length === 0 ? 'No alterative names known' : detailedCharacterInfo.alternate_names.join(', ')}</p>
-              </div>
+      <section className="detailed_section">
+          <h2 className="detailed_title">{`Detailed information of ${detailedCharacterInfo.name}`}</h2>
+          <article className="detailed_character">
+            <img src={detailedCharacterInfo.image || defaultImage} alt={`Photo of ${detailedCharacterInfo.name}`} className="detailed_img" />
+            <div className="detailed_info">
+                <p><span className="bolder">Name:</span> {detailedCharacterInfo.name}</p>
+                <p><span className="bolder">Status:</span> {detailedCharacterInfo.alive ? 'Alive' : 'Dead'}</p>
+                <p><span className="bolder">House:</span> {detailedCharacterInfo.house}</p>
+                <p><span className="bolder">Gender:</span> {capitalizeLetter(detailedCharacterInfo.gender)}</p>
+                <p><span className="bolder">Specie:</span> {capitalizeLetter(detailedCharacterInfo.species)}</p> 
+                <p><span className="bolder">Alternative names:</span> {detailedCharacterInfo.alternate_names.length === 0 ? 'No alterative names known' : detailedCharacterInfo.alternate_names.join(', ')}</p>
+            </div>
           </article>
-          <Link to="/">Return to main page</Link>
-      </div>
+          <Link to="/" className="return_link">Return to main page</Link>
+      </section>
   );
 }
 

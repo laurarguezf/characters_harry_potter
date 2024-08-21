@@ -6,14 +6,14 @@ function CharactersList({characters}) {
 
   if (characters.length === 0) {
     return ( 
-      <p>No characters available</p>
+      <p className="warning_text">No characters match that name</p>
     );
   }
 
   return (
-    <ul>
+    <ul className="character_list">
       {characters.map(character => (
-        <li key={character.id}>
+        <li key={character.id} className="character_list_item">
             <CharacterItem character={character}/>
         </li>
       ))}
