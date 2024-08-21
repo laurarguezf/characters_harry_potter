@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { capitalizeLetter } from "../../services/capitalizeLetter";
-import defaultImage from "../../images/snitch.png";
+import defaultImage from "../../images/snitch.png"
 
 function CharacterItem({ character }) {
   return (

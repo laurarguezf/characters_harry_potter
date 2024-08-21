@@ -4,6 +4,8 @@ import "../styles/App.scss";
 import { Route, Routes } from "react-router-dom";
 import CharacterDetails from "./characters/CharacterDetails";
 import Landing from "./Landing";
+import logo from "/images/logo.png"
+import clouds from "/videos/clouds.mp4"
 
 function App() {
 
@@ -45,10 +47,10 @@ function App() {
   return (
     <div>
       <video className="video_background" autoPlay muted loop>
-        <source src="src/videos/clouds.mp4" type="video/mp4"/>
+        <source src={clouds} type="video/mp4"/>
       </video>
       <header className="header">
-        <img src="src/images/logo.png" className="header_logo" alt="Harry Potter Logo" />
+        <img src={logo} className="header_logo" alt="Harry Potter Logo" />
         <h1 className="header_title">Character finder</h1>
       </header>
 
