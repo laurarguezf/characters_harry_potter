@@ -45,7 +45,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="page">
       <video className="video_background" autoPlay muted loop>
         <source src={clouds} type="video/mp4"/>
       </video>

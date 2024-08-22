@@ -5,12 +5,14 @@
 // Contenedor Principal
 
 .video_background {
+  min-width: 100vw;
   min-height: 100vh;
   position: fixed;
   left: 0; 
   top: 0;
   z-index: -1;
-  overflow: hidden;
+  overflow-y: scroll;
+  background-color: #3e3e3e;
 }
 
 // Encabezado
@@ -94,7 +96,30 @@
     }
 
     @media (min-width: 768px) {
-      
+      .form_label {
+        font-size: 1.3rem;
+      }
+
+      .form_input {
+        gap: 1.5rem;
+      }
+
+      .form_input_text {
+        font-size: 1.2rem;
+      }
+
+      .form_input_search {
+        min-width: 320px;
+      }
+
+      .form_button_reset {
+        padding-inline: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .form_input_house {
+        width: 160px;
+      }
     }
   }
 
@@ -102,20 +127,33 @@
 
     display: grid;
     grid-template-columns: 1fr;
+    justify-items: center;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (min-width: 1440px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
 
     .characters_title {
         padding-bottom: 1.5rem;
         font-size: 1.5rem;
         color: $color_text;
         font-weight: normal;
-        text-align: center;
       }
     
     // Tarjetas de Personajes
 
     .character_list {
       display: grid;
-      justify-content: center;
+      grid-template-columns: 1fr;
+      text-align: center;
       gap: 1rem;
     }
     .character_list_item {
@@ -139,7 +177,6 @@
       height: 250px;
       object-fit: cover;
       object-position: top;
-
       margin-bottom: 1rem;
     }
 
@@ -157,11 +194,62 @@
 
     }
 
+    @media (min-width: 768px) {
+
+      .characters_title {
+        grid-column: span 2;
+        font-size: 2.2rem;
+      }
+
+      .character_list {
+        grid-template-columns: 1fr 1fr;
+        grid-column: span 2;
+        gap: 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      
+      .characters_title {
+        grid-column: span 3;
+      }
+
+      .character_list {
+        grid-template-columns: repeat(3, 1fr);
+        grid-column: span 3;
+      }
+    }
+
+    @media (min-width: 1440px) {
+
+      .characters_title {
+        grid-column: span 4;
+      }
+
+      .character_list {
+        grid-template-columns: repeat(4, 1fr);
+        grid-column: span 4;
+      }
+    }
   }
 
   .detailed_section {
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
     text-align: center;
+    max-width: 380px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      max-width: 550px;
+    }
+
+    @media (min-width: 1024px) {
+      max-width: 650px;
+    }
 
     .detailed_title {
       padding-block: 0.5rem 1rem;
@@ -198,7 +286,35 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.283);
     }
 
-    
+    @media (min-width: 768px) {
+
+      .detailed_title {
+        font-size: 1.8rem;
+      }
+
+      .detailed_character {
+        padding-inline: 2rem;
+      }
+
+      .detailed_img {
+        min-width: 200px;
+      }
+
+      .detailed_info {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      
+      .detailed_img {
+        min-width: 220px;
+      }
+
+      .detailed_character {
+        padding-inline: 3.5rem;
+      }
+    }
   }
 
   .return_link {
@@ -209,8 +325,10 @@
     color: black;
     font-weight: bolder;
     border-radius: 5px;
-   
-    
+
+    @media (min-width: 768px) {
+      font-size: 1.1rem;
+    }
   }
 
   .warning_text {
@@ -220,12 +338,28 @@
     font-size: 1.5rem;
     margin-bottom: 1rem;
     margin-inline: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
     animation: blink 1.25s infinite;
 
     @keyframes blink {
       0% { color: red; }
       50% { color: transparent; }
       100% { color: red; }
+    }
+
+    @media (min-width: 768px) {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      grid-column: span 2;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: span 3;
+    }
+
+    @media (min-width: 1440x) {
+      grid-column: span 4;
     }
   }
 
@@ -245,6 +379,11 @@
 
   .lightning {
     color: orange;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+    margin-top: 3rem;
   }
 }
 
