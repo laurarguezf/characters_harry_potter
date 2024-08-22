@@ -1,0 +1,12 @@
+// Contenedor Principal
+
+.video_background {
+    min-width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    left: 0; 
+    top: 0;
+    z-index: -1;
+    overflow-y: scroll;
+    background-color: #3e3e3e;
+  }

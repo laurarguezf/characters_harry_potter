@@ -1,0 +1,84 @@
+.landing_form {
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  margin-block: 1.5rem;
+
+  .form_label {
+    color: $color_text;
+    font-size: 1.1rem;
+  }
+    
+  .form_input {
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .form_input_text {
+    font-size: 1rem;
+    color: #3e3e3e;
+  }
+
+  .form_input_search {
+    min-width: 220px;
+  }
+
+  .form_button_reset {
+    cursor: pointer;
+    padding-inline: 0.25rem;
+    background-color: rgb(255, 240, 212);
+    border: 1px solid rgb(0, 0, 0);
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 0.9rem;
+    border-radius: 2px;
+  }
+
+  .form_input_house {
+    width: 135px;
+  }
+
+  @media (min-width: 768px) {
+    .form_label {
+      font-size: 1.3rem;
+    }
+
+    .form_input {
+      gap: 1.5rem;
+    }
+
+    .form_input_text {
+      font-size: 1.2rem;
+    }
+
+    .form_input_search {
+      min-width: 320px;
+    }
+
+    .form_button_reset {
+      padding-inline: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .form_input_house {
+      width: 160px;
+    }
+  }
+}
+
+.return_link {
+  background-color: rgb(255, 227, 175);
+  padding: 0.3rem;
+  border: 1px solid rgb(0, 0, 0);
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+  border-radius: 5px;
+
+  @media (min-width: 768px) {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,104 @@
+.landing_characters_section {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .characters_title {
+    padding-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: $color_text;
+    font-weight: normal;
+  }
+
+  // Tarjetas de Personajes
+
+  .character_list {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .character_list_item {
+    list-style: none;
+    max-width: 220px;
+  }
+
+  .character_container {
+    background-color: $color_card_background;
+    border-radius: $border-radius;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .character_img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+    margin-bottom: 1rem;
+  }
+
+  .character_name {
+    color: #3e3e3e;
+    font-size: 1.3rem;
+    padding-bottom: 0.5rem;
+    font-weight: bolder;
+  }
+
+  .character_specie {
+    font-size: 1rem;
+    color: #3e3e3e;
+  }
+
+  @media (min-width: 768px) {
+    .characters_title {
+      grid-column: span 2;
+      font-size: 2.2rem;
+    }
+
+    .character_list {
+      grid-template-columns: 1fr 1fr;
+      grid-column: span 2;
+      gap: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .characters_title {
+      grid-column: span 3;
+    }
+
+    .character_list {
+      grid-template-columns: repeat(3, 1fr);
+      grid-column: span 3;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .characters_title {
+      grid-column: span 4;
+    }
+
+    .character_list {
+      grid-template-columns: repeat(4, 1fr);
+      grid-column: span 4;
+    }
+  }
+}
