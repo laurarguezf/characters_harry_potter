@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function SearchFilter({searchFilter, handleChangeSearch}) {
+function SearchFilter({searchFilter, handleChangeSearch, handleChangeHouse}) {
   
   const handleSearchFilter = (ev) => {
     handleChangeSearch(ev.currentTarget.value);
@@ -8,6 +8,7 @@ function SearchFilter({searchFilter, handleChangeSearch}) {
 
   const handleReset = () => {
     handleChangeSearch('');
+    handleChangeHouse('Gryffindor');
   }
   
   return (
@@ -23,7 +24,8 @@ function SearchFilter({searchFilter, handleChangeSearch}) {
 
 SearchFilter.propTypes = {
   searchFilter: PropTypes.string.isRequired,
-  handleChangeSearch: PropTypes.func.isRequired
+  handleChangeSearch: PropTypes.func.isRequired,
+  handleChangeHouse: PropTypes.func.isRequired
 }
 
 export default SearchFilter;

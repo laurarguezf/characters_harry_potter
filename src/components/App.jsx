@@ -19,10 +19,20 @@ function App() {
 
   useEffect(() => {
     getCharacters().then((responseData) => {
-      setCharacters(responseData);
+      const sortedCharacters = responseData.sort((character1, character2) => {
+        if (character1.name < character2.name) {
+          return -1;
+        } else if (character1.name > character2.name) {
+          return 1;
+        } else {
+          return 0
+        }
+      });
+
+      setCharacters(sortedCharacters);
     });
   }, []);
-
+  
   // EVENTOS
 
   const handleChangeHouse = (house) => {

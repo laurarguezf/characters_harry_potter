@@ -8,7 +8,7 @@ function Landing({filteredCharacters, houseFilter, handleChangeHouse, searchFilt
   return (
     <>
       <form onSubmit={handleSubmit} className="landing_form">
-        <SearchFilter searchFilter={searchFilter} handleChangeSearch={handleChangeSearch} />
+        <SearchFilter searchFilter={searchFilter} handleChangeSearch={handleChangeSearch} handleChangeHouse={handleChangeHouse} />
         <HouseFilter houseFilter={houseFilter} handleChangeHouse={handleChangeHouse} /> 
       </form>
 
