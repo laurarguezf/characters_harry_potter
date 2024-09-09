@@ -1,4 +1,4 @@
-# Character Finder: Harry Potter Edition
+# Character Finder: Harry Potter Edition  // [DEMO](http://beta.adalab.es/modulo-3-evaluacion-final-laurarguezf/)
 
 **Character Finder** es una aplicación creada con **React** que permite buscar, filtrar y explorar personajes del universo **Harry Potter**. Utiliza una API externa para obtener información detallada de cada personaje, permitiendo a los usuarios sumergirse en el mundo mágico.
 
